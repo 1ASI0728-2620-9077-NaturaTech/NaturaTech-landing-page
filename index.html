@@ -1,478 +1,798 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BioDemeter IoT | PlantSync</title>
-</head>
-<body class="bg-background text-foreground antialiased font-sans">
-
-    <header id="main-header" class="fixed w-full z-50 transition-all duration-300 border-b border-border/40 bg-background/80 backdrop-blur-md">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <img src="/logo-plantsync.png" alt="Logo" class="h-8 w-8">
-                <span class="text-xl font-bold tracking-tight">PlantSync</span>
-            </div>
-            
-            <div class="hidden md:flex gap-6 items-center">
-                <a href="#hero" class="text-sm font-medium hover:text-primary" data-i18n="navbar.home"></a>
-                <a href="#beneficios" class="text-sm font-medium hover:text-primary" data-i18n="navbar.benefits"></a>
-                <a href="#como-funciona" class="text-sm font-medium hover:text-primary" data-i18n="navbar.how"></a>
-                <a href="#iot" class="text-sm font-medium hover:text-primary" data-i18n="navbar.features"></a>
-                <a href="#ai" class="text-sm font-medium hover:text-primary" data-i18n="navbar.ai"></a>
-                <a href="#pricing" class="text-sm font-medium hover:text-primary" data-i18n="navbar.pricing"></a>
-                <a href="#faq" class="text-sm font-medium hover:text-primary" data-i18n="navbar.faq"></a>
-                <a href="#team" class="text-sm font-medium hover:text-primary" data-i18n="navbar.team"></a>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <div class="flex gap-1 text-xs border rounded-md p-0.5">
-                    <button data-lang-switch="es" class="px-2 py-1 rounded bg-secondary/50 font-bold">ES</button>
-                    <button data-lang-switch="en" class="px-2 py-1 rounded hover:bg-secondary/50">EN</button>
-                </div>
-                <a href="https://frontend-main-orpin-seven.vercel.app/sign-in" target="_blank" rel="noopener noreferrer" class="hidden md:block bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity text-center" data-i18n="navbar.access"></a>
-                <button id="mobile-menu-btn" class="md:hidden p-2">
-                    <i data-lucide="menu"></i>
-                </button>
-            </div>
-        </nav>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-background border-t p-6">
-            <div class="flex flex-col gap-4">
-                <a href="#hero" class="text-lg font-medium" data-i18n="navbar.home"></a>
-                <a href="#beneficios" class="text-lg font-medium" data-i18n="navbar.benefits"></a>
-                <a href="#iot" class="text-lg font-medium" data-i18n="navbar.features"></a>
-                <a href="#ai" class="text-lg font-medium" data-i18n="navbar.ai"></a>
-                <a href="#pricing" class="text-lg font-medium" data-i18n="navbar.pricing"></a>
-                <a href="#faq" class="text-lg font-medium" data-i18n="navbar.faq"></a>
-                <a href="#team" class="text-lg font-medium" data-i18n="navbar.team"></a>
-            </div>
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <link rel="apple-touch-icon" href="assets/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173e30" />
+    <meta
+      name="description"
+      content="Autonomous plant care powered by IoT, AI and Web3. Discover PlantSync."
+    />
+    <title>PlantSync — Intelligent care. Living rewards.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a data-i18n="copy1" class="skip-link" href="#content">Skip to content</a>
+    <header class="header" id="header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a class="brand" href="#home"
+          ><img src="assets/logo.png" alt="" width="35" height="35" /><span
+            class="logo-fallback"
+            aria-hidden="true"
+            >✳</span
+          >PlantSync<span class="brand-dot">.</span></a
+        >
+        <div class="nav-links" id="nav-links">
+          <a data-i18n="copy2" href="#home">Home</a
+          ><a data-i18n="copy3" href="#product">Product</a
+          ><a data-i18n="copy4" href="#features">Features</a
+          ><a data-i18n="copy5" href="#reviews">Reviews</a
+          ><a data-i18n="copy6" href="#team">Team</a>
         </div>
+        <div class="nav-controls">
+          <div
+            class="language-switch"
+            role="group"
+            aria-label="Language / Idioma"
+          >
+            <button type="button" data-language="en" aria-pressed="true">
+              EN</button
+            ><button type="button" data-language="es" aria-pressed="false">
+              ES
+            </button>
+          </div>
+          <a data-i18n="copy7" href="#contact" class="button magnetic"
+            >Join waitlist ↗</a
+          ><button
+            class="menu-toggle"
+            aria-expanded="false"
+            aria-controls="nav-links"
+            aria-label="Open menu"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </nav>
     </header>
-
-    <main>
-        <section id="hero" class="relative pt-32 pb-20 px-6 overflow-hidden">
-            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <span class="inline-flex items-center rounded-full bg-secondary/50 px-3 py-1 text-sm font-medium">
-                        <span class="w-2 h-2 rounded-full bg-primary mr-2"></span>
-                        by BioPafi
-                    </span>
-                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-foreground">
-                        <span data-i18n="hero.title"></span> 
-                        <i data-lucide="leaf" class="inline-block w-10 h-10 md:w-12 md:h-12 text-primary ml-2 mb-2"></i>
-                    </h1>
-                    <p class="text-lg text-muted-foreground leading-relaxed" data-i18n="hero.subtitle"></p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://frontend-main-orpin-seven.vercel.app/sign-in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-opacity text-center" data-i18n="hero.cta_start"></a>
-                        <a href="#como-funciona" class="inline-flex items-center justify-center bg-secondary px-8 py-4 rounded-xl font-semibold hover:bg-secondary/80 transition-colors" data-i18n="hero.cta_how"></a>
-                    </div>
-                </div>
-                <div class="relative flex justify-center items-center">
-                    <div class="w-full max-w-md h-[400px] bg-gradient-organic rounded-full border border-border animate-float flex items-center justify-center relative overflow-hidden shadow-xl">
-                        <i data-lucide="leaf" class="w-48 h-48 text-primary/20 absolute"></i>
-                        <img src="/hoja-digital.png" alt="Hoja Digital" class="w-3/4 h-3/4 object-contain z-10" onerror="this.style.display='none'">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="beneficios" class="py-20 bg-muted/20">
-            <div class="max-w-7xl mx-auto px-6 text-center mb-16">
-                <span class="bg-secondary px-4 py-1.5 rounded-full text-sm font-medium text-primary" data-i18n="benefits.badge"></span>
-                <h2 class="text-4xl md:text-5xl font-bold mt-6 mb-6" data-i18n="benefits.title"></h2>
-                <p class="text-muted-foreground max-w-2xl mx-auto" data-i18n="benefits.subtitle"></p>
-            </div>
-
-            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6">
-                <div class="p-8 border border-border bg-background rounded-3xl">
-                    <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="heart" class="text-pink-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2" data-i18n="benefits.card1.title"></h3>
-                    <p class="text-muted-foreground" data-i18n="benefits.card1.desc"></p>
-                </div>
-                <div class="p-8 border border-border bg-background rounded-3xl">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="clock" class="text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2" data-i18n="benefits.card2.title"></h3>
-                    <p class="text-muted-foreground" data-i18n="benefits.card2.desc"></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="como-funciona" class="py-20 bg-background">
-            <div class="max-w-7xl mx-auto px-6 text-center">
-                <span class="bg-secondary px-4 py-1.5 rounded-full text-sm font-medium text-primary" data-i18n="how.badge"></span>
-                <h2 class="text-4xl font-bold mt-6 mb-16" data-i18n="how.title"></h2>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="p-8 border rounded-3xl bg-muted/20">
-                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                            <i data-lucide="camera" class="text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" data-i18n="how.step1.title"></h3>
-                        <p class="text-muted-foreground" data-i18n="how.step1.desc"></p>
-                    </div>
-                    <div class="p-8 border rounded-3xl bg-muted/20">
-                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                            <i data-lucide="wifi" class="text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" data-i18n="how.step2.title"></h3>
-                        <p class="text-muted-foreground" data-i18n="how.step2.desc"></p>
-                    </div>
-                    <div class="p-8 border rounded-3xl bg-muted/20">
-                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                            <i data-lucide="brain" class="text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4" data-i18n="how.step3.title"></h3>
-                        <p class="text-muted-foreground" data-i18n="how.step3.desc"></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="faq" class="py-20 bg-muted/30">
-            <div class="max-w-3xl mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-12" data-i18n="faq.title"></h2>
-                <div id="accordion-container" class="space-y-4">
-                    <div class="accordion-item border border-border bg-background rounded-xl p-4 shadow-sm">
-                        <button class="flex justify-between items-center w-full font-bold text-left">
-                            <span data-i18n="faq.q1.question"></span>
-                            <i data-lucide="chevron-down" class="shrink-0 ml-4 text-primary"></i>
-                        </button>
-                        <div class="hidden pt-4 text-muted-foreground leading-relaxed" data-i18n="faq.q1.answer"></div>
-                    </div>
-                    <div class="accordion-item border border-border bg-background rounded-xl p-4 shadow-sm">
-                        <button class="flex justify-between items-center w-full font-bold text-left">
-                            <span data-i18n="faq.q2.question"></span>
-                            <i data-lucide="chevron-down" class="shrink-0 ml-4 text-primary"></i>
-                        </button>
-                        <div class="hidden pt-4 text-muted-foreground leading-relaxed" data-i18n="faq.q2.answer"></div>
-                    </div>
-                    <div class="accordion-item border border-border bg-background rounded-xl p-4 shadow-sm">
-                        <button class="flex justify-between items-center w-full font-bold text-left">
-                            <span data-i18n="faq.q3.question"></span>
-                            <i data-lucide="chevron-down" class="shrink-0 ml-4 text-primary"></i>
-                        </button>
-                        <div class="hidden pt-4 text-muted-foreground leading-relaxed" data-i18n="faq.q3.answer"></div>
-                    </div>
-                    <div class="accordion-item border border-border bg-background rounded-xl p-4 shadow-sm">
-                        <button class="flex justify-between items-center w-full font-bold text-left">
-                            <span data-i18n="faq.q4.question"></span>
-                            <i data-lucide="chevron-down" class="shrink-0 ml-4 text-primary"></i>
-                        </button>
-                        <div class="hidden pt-4 text-muted-foreground leading-relaxed" data-i18n="faq.q4.answer"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="iot" class="py-20 bg-background">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-16" data-i18n="iot.title"></h2>
-                
-                <div class="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center">
-                    <div class="space-y-6">
-                        <div class="p-6 border border-border bg-card rounded-2xl flex gap-4 hover:shadow-md transition-shadow">
-                            <div class="bg-blue-100 p-3 rounded-xl h-fit"><i data-lucide="droplets" class="text-blue-600"></i></div>
-                            <div>
-                                <h4 class="font-bold text-lg" data-i18n="iot.s1.title"></h4>
-                                <p class="text-sm text-muted-foreground mt-1" data-i18n="iot.s1.desc"></p>
-                            </div>
-                        </div>
-                        <div class="p-6 border border-border bg-card rounded-2xl flex gap-4 hover:shadow-md transition-shadow">
-                            <div class="bg-orange-100 p-3 rounded-xl h-fit"><i data-lucide="thermometer" class="text-orange-600"></i></div>
-                            <div>
-                                <h4 class="font-bold text-lg" data-i18n="iot.s2.title"></h4>
-                                <p class="text-sm text-muted-foreground mt-1" data-i18n="iot.s2.desc"></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hidden lg:flex justify-center relative">
-                        <div class="w-72 h-72 bg-gradient-organic rounded-full shadow-2xl animate-float flex items-center justify-center border-4 border-white/50">
-                             <i data-lucide="cpu" class="w-24 h-24 text-primary/60"></i>
-                        </div>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div class="p-6 border border-border bg-card rounded-2xl flex gap-4 hover:shadow-md transition-shadow">
-                            <div class="bg-yellow-100 p-3 rounded-xl h-fit"><i data-lucide="sun" class="text-yellow-600"></i></div>
-                            <div>
-                                <h4 class="font-bold text-lg" data-i18n="iot.s3.title"></h4>
-                                <p class="text-sm text-muted-foreground mt-1" data-i18n="iot.s3.desc"></p>
-                            </div>
-                        </div>
-                        <div class="p-6 border border-border bg-card rounded-2xl flex gap-4 hover:shadow-md transition-shadow">
-                            <div class="bg-primary/20 p-3 rounded-xl h-fit"><i data-lucide="zap" class="text-primary"></i></div>
-                            <div>
-                                <h4 class="font-bold text-lg" data-i18n="iot.s4.title"></h4>
-                                <p class="text-sm text-muted-foreground mt-1" data-i18n="iot.s4.desc"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="ai" class="py-24 lg:py-32 relative bg-muted/10">
-            <div class="max-w-7xl mx-auto px-6 text-center mb-16">
-                <span class="bg-primary/10 px-4 py-1.5 rounded-full text-sm font-bold text-primary" data-i18n="ai.badge"></span>
-                <h2 class="text-4xl md:text-5xl font-bold mt-6 mb-6" data-i18n="ai.title"></h2>
-                <p class="text-muted-foreground max-w-2xl mx-auto text-lg" data-i18n="ai.subtitle"></p>
-            </div>
-            
-            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-                <div class="p-8 border border-border bg-background rounded-3xl text-center hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="scan-eye" class="text-blue-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4" data-i18n="ai.feature1.title"></h3>
-                    <p class="text-muted-foreground" data-i18n="ai.feature1.desc"></p>
-                </div>
-
-                <div class="p-8 border border-border bg-background rounded-3xl text-center hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
-                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 relative z-10">
-                        <i data-lucide="sparkles" class="text-primary w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 relative z-10" data-i18n="ai.feature2.title"></h3>
-                    <p class="text-muted-foreground relative z-10" data-i18n="ai.feature2.desc"></p>
-                </div>
-
-                <div class="p-8 border border-border bg-background rounded-3xl text-center hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="trending-up" class="text-emerald-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4" data-i18n="ai.feature3.title"></h3>
-                    <p class="text-muted-foreground" data-i18n="ai.feature3.desc"></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing" class="py-24 bg-muted/20 relative">
-            <div class="max-w-7xl mx-auto px-6 text-center">
-                <span class="inline-flex items-center justify-center gap-2 bg-background border border-border px-4 py-1.5 rounded-full text-sm font-medium text-muted-foreground mb-6">
-                    <i data-lucide="calendar" class="w-4 h-4"></i> <span data-i18n="pricing.badge"></span>
-                </span>
-                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="pricing.title"></h2>
-                <p class="text-muted-foreground max-w-2xl mx-auto mb-16" data-i18n="pricing.subtitle"></p>
-                
-                <div class="grid md:grid-cols-3 gap-8 items-start">
-                    <div class="p-8 border border-border rounded-3xl bg-background text-left relative hover:shadow-lg transition-shadow">
-                        <h3 class="text-2xl font-bold" data-i18n="pricing.basic.title"></h3>
-                        <p class="text-sm text-muted-foreground mt-2" data-i18n="pricing.basic.subtitle"></p>
-                        <div class="my-6">
-                            <span class="text-5xl font-extrabold">$2.99</span><span class="text-muted-foreground">/mes</span>
-                        </div>
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 shrink-0"></i> <span data-i18n="pricing.basic.f1"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 shrink-0"></i> <span data-i18n="pricing.basic.f2"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 shrink-0"></i> <span data-i18n="pricing.basic.f3"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 shrink-0"></i> <span data-i18n="pricing.basic.f4"></span></li>
-                        </ul>
-                        <button class="w-full py-3 rounded-xl bg-secondary/60 font-bold hover:bg-secondary transition-colors" data-i18n="pricing.basic.btn"></button>
-                    </div>
-
-                    <div class="p-8 border-2 border-primary rounded-3xl bg-[#0f3b21] text-white text-left relative shadow-2xl md:scale-105 z-10">
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#ea580c] text-white px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1">
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i> <span data-i18n="pricing.premium.badge"></span>
-                        </div>
-                        <h3 class="text-2xl font-bold" data-i18n="pricing.premium.title"></h3>
-                        <p class="text-sm text-white/80 mt-2" data-i18n="pricing.premium.subtitle"></p>
-                        <div class="my-6">
-                            <span class="text-5xl font-extrabold">$10.99</span><span class="text-white/80">/mes</span>
-                        </div>
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0"></i> <span data-i18n="pricing.premium.f1"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0"></i> <span data-i18n="pricing.premium.f2"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0"></i> <span data-i18n="pricing.premium.f3"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0"></i> <span data-i18n="pricing.premium.f4"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0"></i> <span data-i18n="pricing.premium.f5"></span></li>
-                        </ul>
-                        <button class="w-full py-3 rounded-xl bg-white text-[#0f3b21] font-bold hover:bg-white/90 transition-colors" data-i18n="pricing.premium.btn"></button>
-                    </div>
-
-                    <div class="p-8 border border-border rounded-3xl bg-background text-left relative hover:shadow-lg transition-shadow">
-                        <h3 class="text-2xl font-bold" data-i18n="pricing.pro.title"></h3>
-                        <p class="text-sm text-muted-foreground mt-2" data-i18n="pricing.pro.subtitle"></p>
-                        <div class="my-6">
-                            <span class="text-5xl font-extrabold">$16.99</span><span class="text-muted-foreground">/mes</span>
-                        </div>
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 shrink-0"></i> <span data-i18n="pricing.pro.f1"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 shrink-0"></i> <span data-i18n="pricing.pro.f2"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 shrink-0"></i> <span data-i18n="pricing.pro.f3"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 shrink-0"></i> <span data-i18n="pricing.pro.f4"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 shrink-0"></i> <span data-i18n="pricing.pro.f5"></span></li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 shrink-0"></i> <span data-i18n="pricing.pro.f6"></span></li>
-                        </ul>
-                        <button class="w-full py-3 rounded-xl bg-[#ea580c] text-white font-bold hover:bg-[#ea580c]/90 transition-colors" data-i18n="pricing.pro.btn"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="team" class="py-24 bg-background">
-            <div class="max-w-7xl mx-auto px-6 text-center">
-                <span class="inline-flex items-center justify-center gap-2 bg-secondary/50 px-4 py-1.5 rounded-full text-sm font-medium text-primary mb-6">
-                    <i data-lucide="users" class="w-4 h-4"></i> <span data-i18n="team.badge"></span>
-                </span>
-                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="team.title"></h2>
-                <p class="text-muted-foreground max-w-2xl mx-auto mb-16" data-i18n="team.subtitle"></p>
-                
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-                    <div class="p-6 border border-border rounded-3xl bg-card hover:shadow-md transition-shadow">
-                        <div class="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center text-xl font-bold mb-6">DR</div>
-                        <h4 class="font-bold text-lg leading-tight mb-1">Diego Rolin Acuña Tomas</h4>
-                        <p class="text-sm font-medium text-emerald-700 mb-4" data-i18n="team.m1.role"></p>
-                        <p class="text-xs text-muted-foreground mb-6" data-i18n="team.m1.desc"></p>
-                        <div class="flex items-center gap-3 text-muted-foreground">
-                            <a href="#" class="hover:text-primary"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="github" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-6 border border-border rounded-3xl bg-card hover:shadow-md transition-shadow">
-                        <div class="w-16 h-16 rounded-2xl bg-stone-100 flex items-center justify-center text-xl font-bold mb-6">FS</div>
-                        <h4 class="font-bold text-lg leading-tight mb-1">Farid Sebastian Briceño De La...</h4>
-                        <p class="text-sm font-medium text-emerald-700 mb-4" data-i18n="team.m2.role"></p>
-                        <p class="text-xs text-muted-foreground mb-6" data-i18n="team.m2.desc"></p>
-                        <div class="flex items-center gap-3 text-muted-foreground">
-                            <a href="#" class="hover:text-primary"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="github" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-6 border border-border rounded-3xl bg-card hover:shadow-md transition-shadow">
-                        <div class="w-16 h-16 rounded-2xl bg-cyan-50 flex items-center justify-center text-xl font-bold mb-6">CA</div>
-                        <h4 class="font-bold text-lg leading-tight mb-1">Carlos Andrés Coca Lavado</h4>
-                        <p class="text-sm font-medium text-emerald-700 mb-4" data-i18n="team.m3.role"></p>
-                        <p class="text-xs text-muted-foreground mb-6" data-i18n="team.m3.desc"></p>
-                        <div class="flex items-center gap-3 text-muted-foreground">
-                            <a href="#" class="hover:text-primary"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="github" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-6 border border-border rounded-3xl bg-card hover:shadow-md transition-shadow">
-                        <div class="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center text-xl font-bold mb-6">EL</div>
-                        <h4 class="font-bold text-lg leading-tight mb-1">Erick Leonardo Palomino Fiestas</h4>
-                        <p class="text-sm font-medium text-emerald-700 mb-4" data-i18n="team.m4.role"></p>
-                        <p class="text-xs text-muted-foreground mb-6" data-i18n="team.m4.desc"></p>
-                        <div class="flex items-center gap-3 text-muted-foreground">
-                            <a href="#" class="hover:text-primary"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="github" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-6 border border-border rounded-3xl bg-card hover:shadow-md transition-shadow">
-                        <div class="w-16 h-16 rounded-2xl bg-purple-50 flex items-center justify-center text-xl font-bold mb-6">RS</div>
-                        <h4 class="font-bold text-lg leading-tight mb-1">Renzo Sebastian Rivera Ratachi</h4>
-                        <p class="text-sm font-medium text-emerald-700 mb-4" data-i18n="team.m5.role"></p>
-                        <p class="text-xs text-muted-foreground mb-6" data-i18n="team.m5.desc"></p>
-                        <div class="flex items-center gap-3 text-muted-foreground">
-                            <a href="#" class="hover:text-primary"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="github" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-6 border border-border rounded-3xl bg-card hover:shadow-md transition-shadow">
-                        <div class="w-16 h-16 rounded-2xl bg-rose-50 flex items-center justify-center text-xl font-bold mb-6">EM</div>
-                        <h4 class="font-bold text-lg leading-tight mb-1">Elvia Marcela Rodríguez Villa</h4>
-                        <p class="text-sm font-medium text-emerald-700 mb-4" data-i18n="team.m6.role"></p>
-                        <p class="text-xs text-muted-foreground mb-6" data-i18n="team.m6.desc"></p>
-                        <div class="flex items-center gap-3 text-muted-foreground">
-                            <a href="#" class="hover:text-primary"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="github" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-6 border border-border rounded-3xl bg-card hover:shadow-md transition-shadow">
-                        <div class="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center text-xl font-bold mb-6">MA</div>
-                        <h4 class="font-bold text-lg leading-tight mb-1">Max Anthony Paitan Pumacahua</h4>
-                        <p class="text-sm font-medium text-emerald-700 mb-4" data-i18n="team.m7.role"></p>
-                        <p class="text-xs text-muted-foreground mb-6" data-i18n="team.m7.desc"></p>
-                        <div class="flex items-center gap-3 text-muted-foreground">
-                            <a href="#" class="hover:text-primary"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="github" class="w-4 h-4"></i></a>
-                            <a href="#" class="hover:text-primary"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 bg-primary text-primary-foreground text-center">
-            <div class="max-w-4xl mx-auto px-6">
-                <h2 class="text-5xl font-bold mb-6" data-i18n="cta.title"></h2>
-                <p class="text-lg opacity-90 mb-10" data-i18n="cta.subtitle"></p>
-                <div class="flex justify-center">
-                    <button class="bg-white text-primary px-8 py-4 rounded-xl font-bold" data-i18n="cta.btn1"></button>
-                </div>
-            </div>
-        </section>
-
-        <section id="videos" class="py-24 bg-muted/10">
-            <div class="max-w-7xl mx-auto px-6 space-y-24">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Video about the team</h2>
-                    <div class="w-full max-w-4xl mx-auto aspect-video bg-background border border-border rounded-3xl shadow-lg flex items-center justify-center overflow-hidden">
-                        <iframe 
-                            width="100%" 
-                            height="100%" 
-                            src="https://www.youtube.com/embed/Usy3NDk73jM" 
-                            title="PlantSync - About the Team" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">About the Product</h2>
-                    <div class="w-full max-w-4xl mx-auto aspect-video bg-background border border-border rounded-3xl shadow-lg flex items-center justify-center overflow-hidden">
-                        <iframe 
-                            width="100%" 
-                            height="100%" 
-                            src="https://www.youtube.com/embed/rZj9y4jfeTw" 
-                            title="PlantSync - About the Product" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">IoT Prototipo Fisico</h2>
-                    <div class="w-full max-w-4xl mx-auto aspect-video bg-background border border-border rounded-3xl shadow-lg flex items-center justify-center overflow-hidden">
-                        <iframe 
-                            width="100%" 
-                            height="100%" 
-                            src="https://www.youtube.com/embed/SKrSkoVCF7g" 
-                            title="PlantSync - IoT Prototype" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-card border-t border-border py-8">
-        <div class="max-w-7xl mx-auto px-6 flex items-center justify-center">
-            <p class="text-sm text-muted-foreground text-center" data-i18n="footer.copyright"></p>
+    <main id="content">
+      <!-- Hero -->
+      <section class="hero container" id="home">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="status-dot"></span
+            ><span data-i18n="copy8">NATURE CONNECTED. CARE REIMAGINED.</span>
+          </div>
+          <h1>
+            <span data-i18n="copy9">Let nature grow.</span><br /><span
+              data-i18n="copy10"
+              class="accent"
+              >Let AI take care.</span
+            >
+          </h1>
+          <p data-i18n="copy11" class="hero-description">
+            Hand plant care over to an autonomous AI agent. Connect IoT sensors,
+            diagnose with computer vision, and earn Web3 rewards for keeping
+            nature alive.
+          </p>
+          <div class="hero-actions">
+            <a data-i18n="copy12" href="#features" class="button magnetic"
+              >Discover PlantSync ↗</a
+            ><a data-i18n="copy13" class="text-link" href="#product"
+              >Explore the ecosystem ↓</a
+            >
+          </div>
+          <div class="hero-note">
+            <span class="mini-leaves">✳</span
+            ><span data-i18n="copy14">Less worry. More life. Every day.</span>
+          </div>
         </div>
+        <!-- Hero photograph with illustrative IoT overlays -->
+        <div class="hero-visual photographic-hero">
+          <div class="parallax-layer">
+            <div class="visual-grid"></div>
+            <span class="visual-label">PLANTSYNC / ECOSYSTEM 01</span>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <img
+              class="hero-photo"
+              src="assets/monstera-interior.webp"
+              alt=""
+              width="1400"
+              height="2100"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <div class="sensor-card">
+              <span class="sensor-icon">⌁</span>
+              <div>
+                <small>IoT</small><strong data-i18n="copy15">Connected</strong>
+              </div>
+              <span class="signal">▂▄▆</span>
+            </div>
+            <div class="health-card">
+              <div class="health-top">
+                <span class="health-icon">✳</span
+                ><span data-i18n="copy16">Your Monstera is thriving</span
+                ><span class="health-check">✓</span>
+              </div>
+              <div class="readings">
+                <div>
+                  <small data-i18n="copy17">Moisture</small
+                  ><strong>68<span>%</span></strong>
+                  <div class="meter"><i></i></div>
+                </div>
+                <div>
+                  <small data-i18n="copy18">Temperature</small
+                  ><strong>24<span>°C</span></strong
+                  ><span data-i18n="copy19" class="optimal"
+                    >Optimal conditions</span
+                  >
+                </div>
+              </div>
+              <div class="ai-note">
+                ✧ <span data-i18n="copy20">Your agent takes it from here.</span>
+              </div>
+            </div>
+            <div class="eco-chip">
+              ◇ <span data-i18n="copy21">Care grows into rewards.</span>
+            </div>
+          </div>
+          <span data-i18n="copy22" class="demo-label"
+            >Illustrative interface · sample data</span
+          >
+        </div>
+      </section>
+      <div class="tech-strip">
+        <div class="container tech-inner">
+          <span data-i18n="copy23">ONE CONNECTED ECOSYSTEM</span
+          ><span>⌁ Internet of Things</span
+          ><span>✧ <span data-i18n="copy24">Autonomous AI</span></span
+          ><span>⬡ Blockchain & Web3</span>
+        </div>
+      </div>
+      <!-- Product and demonstration video -->
+      <section class="section container" id="product">
+        <div class="product">
+          <div class="reveal">
+            <div class="eyebrow">
+              01 / <span data-i18n="copy25">THE PRODUCT</span>
+            </div>
+            <h2>
+              <span data-i18n="copy26">Nature is intelligent.</span><br /><span
+                data-i18n="copy27"
+                >Its care should be, too.</span
+              >
+            </h2>
+          </div>
+          <div class="product-copy reveal">
+            <p data-i18n="copy28" class="lead">
+              Less uncertainty. More thriving plants.
+            </p>
+            <p data-i18n="copy29">
+              35% of household plants die due to inaccurate visual diagnoses and
+              forgotten care.* PlantSync removes the cognitive load with a
+              connected ecosystem that makes precision gardening accessible.
+            </p>
+            <div class="stat">
+              <strong>50<span>%</span></strong>
+              <div>
+                <span data-i18n="copy30">less plant loss</span
+                ><small data-i18n="copy31"
+                  >Our target, powered by autonomous decisions</small
+                >
+              </div>
+            </div>
+            <small data-i18n="copy32" class="source-note"
+              >*Project premise awaiting validation. The 50% reduction is a
+              target, not a demonstrated result.</small
+            >
+          </div>
+        </div>
+        <div class="video-shell reveal">
+          <iframe
+            src="about:blank"
+            title="Meet your plant’s new intelligence."
+            data-video="product"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            allowfullscreen
+          ></iframe>
+          <div class="video-placeholder botanical-video">
+            <img
+              class="video-cover"
+              src="assets/monstera-detail.webp"
+              alt=""
+              width="1600"
+              height="2400"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="video-play" aria-hidden="true">▷</span>
+            <h3 data-i18n="copy33">Meet your plant’s new intelligence.</h3>
+            <p data-i18n="copy34">Video coming soon · YouTube embed ready</p>
+          </div>
+        </div>
+      </section>
+      <!-- Core technology -->
+      <section class="features section" id="features">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <div class="eyebrow">
+                02 / <span data-i18n="copy35">PURPOSEFUL TECHNOLOGY</span>
+              </div>
+              <h2>
+                <span data-i18n="copy36">One small ecosystem.</span><br /><span
+                  data-i18n="copy37"
+                  >One extraordinary leap.</span
+                >
+              </h2>
+            </div>
+            <p data-i18n="copy38">Three technologies. One living mission.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <div class="card-top">
+                <span class="feature-icon">⌖</span
+                ><span data-i18n="copy39">01 / VISION</span>
+              </div>
+              <div class="feature-photo">
+                <img
+                  src="assets/plant-diagnosis.webp"
+                  alt=""
+                  width="1000"
+                  height="700"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 data-i18n="copy40">A photo. A clearer picture.</h3>
+              <p data-i18n="copy41">
+                Computer vision analyzes photos in the cloud to identify
+                botanical diseases, fungi and wilting. Turn uncertainty into
+                informed care.
+              </p>
+              <span data-i18n="copy42" class="tag">COMPUTER VISION & AI</span>
+            </article>
+            <article class="feature-card reveal">
+              <div class="card-top">
+                <span class="feature-icon">✧</span
+                ><span data-i18n="copy43">02 / ACTION</span>
+              </div>
+              <div class="feature-photo">
+                <img
+                  src="assets/plant-watering.webp"
+                  alt=""
+                  width="1000"
+                  height="700"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 data-i18n="copy44">Intelligence that takes action.</h3>
+              <p data-i18n="copy45">
+                Connected to your IoT sensors, the autonomous agent sends
+                real-time MQTT commands to irrigation systems and UV lights.
+                Care moves from the screen into the real world.
+              </p>
+              <span data-i18n="copy46" class="tag">AUTONOMOUS AI AGENT</span>
+            </article>
+            <article class="feature-card reveal web3">
+              <div class="card-top">
+                <span class="feature-icon">⬡</span
+                ><span data-i18n="copy47">03 / REWARD</span>
+              </div>
+              <div class="feature-photo">
+                <img
+                  src="assets/web3-token.webp"
+                  alt=""
+                  width="1000"
+                  height="700"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 data-i18n="copy48">Grow something worth collecting.</h3>
+              <p data-i18n="copy49">
+                Maintain optimal conditions for 30 uninterrupted days. Verified
+                telemetry triggers our Web Service to mint exclusive Eco-Token
+                NFTs into your wallet through smart contracts.
+              </p>
+              <span data-i18n="copy50" class="tag">SMART CONTRACTS & WEB3</span>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Interactive process -->
+      <section class="section container" id="how">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">
+              03 / <span data-i18n="copy51">HOW IT WORKS</span>
+            </div>
+            <h2>
+              <span data-i18n="copy52">Connect. Cultivate. Collect.</span>
+            </h2>
+          </div>
+        </div>
+        <div class="steps-layout reveal">
+          <div
+            class="steps"
+            role="tablist"
+            aria-label="Process / Proceso"
+            aria-orientation="vertical"
+          >
+            <button
+              class="step active"
+              id="step-0"
+              role="tab"
+              aria-selected="true"
+              aria-controls="step-panel"
+              tabindex="0"
+              data-step="0"
+            >
+              <span>01</span
+              ><strong data-i18n="copy53">Connect your plant</strong
+              ><b>↗</b></button
+            ><button
+              class="step"
+              id="step-1"
+              role="tab"
+              aria-selected="false"
+              aria-controls="step-panel"
+              tabindex="-1"
+              data-step="1"
+            >
+              <span>02</span
+              ><strong data-i18n="copy54">Monitor around the clock</strong
+              ><b>↗</b></button
+            ><button
+              class="step"
+              id="step-2"
+              role="tab"
+              aria-selected="false"
+              aria-controls="step-panel"
+              tabindex="-1"
+              data-step="2"
+            >
+              <span>03</span
+              ><strong data-i18n="copy55">Let your agent act</strong
+              ><b>↗</b></button
+            ><button
+              class="step"
+              id="step-3"
+              role="tab"
+              aria-selected="false"
+              aria-controls="step-panel"
+              tabindex="-1"
+              data-step="3"
+            >
+              <span>04</span
+              ><strong data-i18n="copy56">Collect Eco-Tokens</strong><b>↗</b>
+            </button>
+          </div>
+          <div
+            class="step-panel"
+            id="step-panel"
+            role="tabpanel"
+            tabindex="0"
+            aria-labelledby="step-0"
+          >
+            <div class="process-photo">
+              <img
+                id="panel-image"
+                src="assets/connected-technology.webp"
+                alt=""
+                width="1000"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <h3 id="panel-title">One plant. One node. Connected.</h3>
+            <p id="panel-description">
+              Connect your IoT node and register your plant to start
+              understanding its environment.
+            </p>
+            <small data-i18n="copy57"
+              >Illustration of the proposed system</small
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Illustrative testimonials -->
+      <section class="reviews-section section" id="reviews">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <div class="eyebrow">
+                04 / <span data-i18n="copy58">A GREENER EVERYDAY</span>
+              </div>
+              <h2>
+                <span data-i18n="copy59">Built around real-life care.</span>
+              </h2>
+            </div>
+            <p data-i18n="copy60" class="review-disclosure">
+              Illustrative reviews · fictional people and experiences.
+            </p>
+          </div>
+          <div class="review-grid">
+            <article class="review-card reveal">
+              <span class="stars" aria-label="5 / 5">★★★★★</span>
+              <blockquote data-i18n="copy61">
+                “PlantSync saved my Monstera. I finally feel like I understand
+                what my plants need.”
+              </blockquote>
+              <div class="review-person">
+                <span class="review-avatar" aria-hidden="true">AL</span>
+                <div>
+                  <strong>Alex L.</strong
+                  ><small data-i18n="copy62">Example profile</small>
+                </div>
+              </div>
+            </article>
+            <article class="review-card reveal">
+              <span class="stars" aria-label="5 / 5">★★★★★</span>
+              <blockquote data-i18n="copy63">
+                “The Web3 integration is genius. Watching my plants thrive makes
+                the rewards feel meaningful.”
+              </blockquote>
+              <div class="review-person">
+                <span class="review-avatar" aria-hidden="true">SM</span>
+                <div>
+                  <strong>Sam M.</strong
+                  ><small data-i18n="copy64">Example profile</small>
+                </div>
+              </div>
+            </article>
+            <article class="review-card reveal">
+              <span class="stars" aria-label="5 / 5">★★★★★</span>
+              <blockquote data-i18n="copy65">
+                “Less guesswork, more green. Autonomous watering is exactly what
+                my busy schedule needed.”
+              </blockquote>
+              <div class="review-person">
+                <span class="review-avatar" aria-hidden="true">JT</span>
+                <div>
+                  <strong>Jordan T.</strong
+                  ><small data-i18n="copy66">Example profile</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Team video and profiles -->
+      <section class="section container" id="team">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">
+              05 / <span data-i18n="copy67">THE PEOPLE</span>
+            </div>
+            <h2>
+              <span data-i18n="copy68">Human minds.</span><br /><span
+                data-i18n="copy69"
+                >A naturally connected vision.</span
+              >
+            </h2>
+          </div>
+          <p data-i18n="copy70">
+            Five creators. One shared ambition: help technology and nature grow
+            together.
+          </p>
+        </div>
+        <div class="video-shell reveal">
+          <iframe
+            src="about:blank"
+            title="Meet the minds behind PlantSync."
+            data-video="team"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            allowfullscreen
+          ></iframe>
+          <div class="video-placeholder">
+            <span class="video-play" aria-hidden="true">▷</span>
+            <h3 data-i18n="copy71">Meet the minds behind PlantSync.</h3>
+            <p data-i18n="copy72">Video coming soon · YouTube embed ready</p>
+          </div>
+        </div>
+        <div class="team-grid">
+          <article class="person reveal">
+            <div class="portrait">
+              <span class="portrait-fallback" aria-hidden="true">RA</span
+              ><img
+                src="assets/rodrigo.JPG"
+                alt="Rodrigo Alaya Cabrera"
+                loading="lazy"
+                width="400"
+                height="480"
+              />
+              <div class="person-overlay">
+                <span data-i18n="copy73">Project team</span
+                ><a
+                  href="https://www.linkedin.com/search/results/people/?keywords=Rodrigo%20Alaya%20Cabrera"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span data-i18n="copy74">Find on LinkedIn ↗</span></a
+                >
+              </div>
+            </div>
+            <h3>Rodrigo Alaya Cabrera</h3>
+            <p data-i18n="copy75">Project team</p>
+          </article>
+          <article class="person reveal">
+            <div class="portrait">
+              <span class="portrait-fallback" aria-hidden="true">CC</span
+              ><img
+                src="assets/carlos.png"
+                alt="Carlos Andrés Coca Lavado"
+                loading="lazy"
+                width="400"
+                height="480"
+              />
+              <div class="person-overlay">
+                <span data-i18n="copy76">Project team</span
+                ><a
+                  href="https://www.linkedin.com/search/results/people/?keywords=Carlos%20Andr%C3%A9s%20Coca%20Lavado"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span data-i18n="copy77">Find on LinkedIn ↗</span></a
+                >
+              </div>
+            </div>
+            <h3>Carlos Andrés Coca Lavado</h3>
+            <p data-i18n="copy78">Project team</p>
+          </article>
+          <article class="person reveal">
+            <div class="portrait">
+              <span class="portrait-fallback" aria-hidden="true">JA</span
+              ><img
+                src="assets/jocelyn.png"
+                alt="Jocelyn Damaly Almerco Rojas"
+                loading="lazy"
+                width="400"
+                height="480"
+              />
+              <div class="person-overlay">
+                <span data-i18n="copy79">Project team</span
+                ><a
+                  href="https://www.linkedin.com/search/results/people/?keywords=Jocelyn%20Damaly%20Almerco%20Rojas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span data-i18n="copy80">Find on LinkedIn ↗</span></a
+                >
+              </div>
+            </div>
+            <h3>Jocelyn Damaly Almerco Rojas</h3>
+            <p data-i18n="copy81">Project team</p>
+          </article>
+          <article class="person reveal">
+            <div class="portrait">
+              <span class="portrait-fallback" aria-hidden="true">IL</span
+              ><img
+                src="assets/ivan.png"
+                alt="Ivan Jeanpierre La Madrid Lozano"
+                loading="lazy"
+                width="400"
+                height="480"
+              />
+              <div class="person-overlay">
+                <span data-i18n="copy82">Project team</span
+                ><a
+                  href="https://www.linkedin.com/search/results/people/?keywords=Ivan%20Jeanpierre%20La%20Madrid%20Lozano"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span data-i18n="copy83">Find on LinkedIn ↗</span></a
+                >
+              </div>
+            </div>
+            <h3>Ivan Jeanpierre La Madrid Lozano</h3>
+            <p data-i18n="copy84">Project team</p>
+          </article>
+          <article class="person reveal">
+            <div class="portrait">
+              <span class="portrait-fallback" aria-hidden="true">DZ</span
+              ><img
+                src="assets/diego.png"
+                alt="Diego Sebastian Zuñiga Murillo"
+                loading="lazy"
+                width="400"
+                height="480"
+              />
+              <div class="person-overlay">
+                <span data-i18n="copy85">Project team</span
+                ><a
+                  href="https://www.linkedin.com/search/results/people/?keywords=Diego%20Sebastian%20Zu%C3%B1iga%20Murillo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span data-i18n="copy86">Find on LinkedIn ↗</span></a
+                >
+              </div>
+            </div>
+            <h3>Diego Sebastian Zuñiga Murillo</h3>
+            <p data-i18n="copy87">Project team</p>
+          </article>
+        </div>
+      </section>
+      <!-- Waitlist -->
+      <section class="contact-section container" id="contact">
+        <div class="contact-box reveal">
+          <div class="contact-decoration" aria-hidden="true">✳</div>
+          <div class="eyebrow">
+            <span data-i18n="copy88">THE FUTURE IS GROWING</span>
+          </div>
+          <h2>
+            <span data-i18n="copy89">Ready for a greener kind of smart?</span>
+          </h2>
+          <p data-i18n="copy90">
+            Be part of the next generation of plant care.
+          </p>
+          <form class="signup-form" novalidate>
+            <label for="waitlist-email"
+              ><span data-i18n="copy91">Your email address</span></label
+            >
+            <div class="form-row">
+              <input
+                id="waitlist-email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+                maxlength="254"
+                aria-describedby="waitlist-note waitlist-message"
+              /><button class="button magnetic" type="submit">
+                <span data-i18n="copy92">Join the waitlist ↗</span>
+              </button>
+            </div>
+            <p data-i18n="copy93" class="form-note" id="waitlist-note">
+              Preview only. Your email is not sent or stored.
+            </p>
+            <p
+              class="form-message"
+              id="waitlist-message"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- Footer navigation, newsletter and legal information -->
+    <footer class="mega-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-mission">
+            <a class="brand" href="#home"
+              ><img src="assets/logo.png" alt="" width="35" height="35" /><span
+                class="logo-fallback"
+                aria-hidden="true"
+                >✳</span
+              >PlantSync<span class="brand-dot">.</span></a
+            >
+            <p data-i18n="copy94">
+              Technology that cares. Nature that thrives. Building a more
+              connected, greener everyday.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/search/results/all/?keywords=PlantSync"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Search PlantSync on LinkedIn"
+                >in ↗</a
+              ><a
+                href="https://www.youtube.com/results?search_query=PlantSync"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Search PlantSync on YouTube"
+                >▶ ↗</a
+              >
+            </div>
+            <small data-i18n="copy95"
+              >Social links open searches; official profiles pending.</small
+            >
+          </div>
+          <div class="footer-column">
+            <h3 data-i18n="copy96">Product</h3>
+            <a data-i18n="copy97" href="#features">Features</a
+            ><button data-info="pricing">
+              <span data-i18n="copy98">Pricing</span></button
+            ><a data-i18n="copy99" href="#contact">Waitlist</a
+            ><a data-i18n="copy100" href="#how">How it works</a>
+          </div>
+          <div class="footer-column">
+            <h3 data-i18n="copy101">Company</h3>
+            <a data-i18n="copy102" href="#team">About us</a
+            ><button data-info="careers">
+              <span data-i18n="copy103">Careers</span></button
+            ><a data-i18n="copy104" href="#contact">Contact</a>
+          </div>
+          <div class="footer-column">
+            <h3 data-i18n="copy105">Legal</h3>
+            <button data-info="privacy">
+              <span data-i18n="copy106">Privacy policy</span></button
+            ><button data-info="terms">
+              <span data-i18n="copy107">Terms of service</span>
+            </button>
+          </div>
+        </div>
+        <div class="footer-newsletter">
+          <div>
+            <h3 data-i18n="copy108">A little more green in your inbox.</h3>
+            <p data-i18n="copy109">
+              Product updates and ideas for a connected future.
+            </p>
+          </div>
+          <form class="signup-form" novalidate>
+            <label for="newsletter-email"
+              ><span data-i18n="copy110">Your email address</span></label
+            >
+            <div class="form-row">
+              <input
+                id="newsletter-email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+                maxlength="254"
+                aria-describedby="newsletter-note newsletter-message"
+              /><button class="button magnetic" type="submit">
+                <span data-i18n="copy111">Subscribe ↗</span>
+              </button>
+            </div>
+            <p data-i18n="copy112" class="form-note" id="newsletter-note">
+              Preview only. Your email is not sent or stored.
+            </p>
+            <p
+              class="form-message"
+              id="newsletter-message"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >© <span id="year">2026</span> PlantSync.
+            <span data-i18n="copy113">All rights reserved.</span></span
+          ><span>Powered by <strong>Spring Boot, IoT & Web3</strong></span>
+        </div>
+      </div>
     </footer>
-
-    <script type="module" src="/src/main.ts"></script>
-</body>
+    <dialog id="info-dialog" aria-labelledby="info-title">
+      <button class="dialog-close" aria-label="Close dialog">×</button>
+      <div class="eyebrow">PLANTSYNC</div>
+      <h2 id="info-title"></h2>
+      <p id="info-copy"></p>
+    </dialog>
+  </body>
 </html>
